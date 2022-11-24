@@ -11,6 +11,30 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
+//const rollCall = tutorials.map(student => student + " the wizard");
+
+const titleCased = () => tutorials.map(tutor => {
+  let i = 0;
+  //tutorials[0].toUpperCase();
+  for(i = 0; i < tutorials.length; i++)
+  {
+    const chars = tutorials[i].split('');
+    chars[0].toUpperCase();
+    
+    let j = 0;
+
+    for(j = 1; j < chars.length; j++)
+    {
+      if(chars[i] === " " && chars[i] != "=")
+      {
+        chars[i+1].toUpperCase();
+        j++;
+      }
+    
+    }
+    
+  }
+
+
   return tutorials
-}
+});
